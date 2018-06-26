@@ -1,0 +1,356 @@
+<!DOCTYPE html>	
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>	GPA CALCULATOR v2.0 </title>
+	
+	<script type="text/javascript">
+	var sum=0,i,l,c1=11,count=0,t;
+	var a=new Array(20);
+	for(t=0;t<11;t++)
+		a[t]=100;
+	
+	function calculate(n,i)
+	{var c;
+	n=parseInt(n,10);
+	if(i=="grade1"||i=="grade6"||i=="grade8")
+		c=4;
+	else if(i=="grade2"||i=="grade5"||i=="grade10"||i=="grade11")
+		c=3;
+	else 
+		c=1;
+	
+	switch(i)
+		{	
+		
+		case "grade1": a[0]=n*c; break;
+		case "grade2":	a[1]=n*c; break;
+		case "grade3":	a[2]=n*c; break;
+		case "grade4":	a[3]=n*c; break;
+		case "grade5":	a[4]=n*c; break;
+		case "grade6":	a[5]=n*c; break;
+		case "grade7":	a[6]=n*c; break;
+		case "grade8":	a[7]=n*c; break;
+		case "grade9":	a[8]=n*c; break;
+		case "grade10":	a[9]=n*c; break;
+		case "grade11":	a[10]=n*c; break;
+		case "grade12":	a[11]=n*c; break;
+		
+		}
+	
+		
+	}
+	
+	
+	function check_ibm(k)
+	{
+	k=parseInt(k,10)
+	if(k==1)
+		{l=29;c1++}
+	else
+		l=28;
+	}
+	
+	function check()
+	{
+	var m;
+	for(m=0;m<c1;m++)
+		if(a[m]%100!=0||a[m]==0)
+			count++;
+	}
+	
+	function display()
+	{check();
+		if(count==c1)
+			{var j;
+				for(j=0;j<c1;j++)
+					sum+=a[j];	
+				
+				sum=sum/l;
+				sum=sum.toFixed(2);
+				document.getElementById("result").innerHTML = "Congratulations!" + "<br/><br/>" + "Your GPA is  " + sum;
+
+				}
+			
+	else
+		document.getElementById("result").innerHTML = "Please Enter all the fields. Refresh the page.";
+			
+	
+	}
+	</script>
+	<style type="text/css">
+		table{text-align: center;}
+		td{padding:10px 10px 10px 10px;}
+		body{background-color: #EBF5FB; font-family: arial;}
+	</style>
+
+</head>
+<body> <center>
+		<div id="top"></div>
+		<h3>4th SEMESTER GPA CALCULATOR 2018 </h3>
+		<strong>
+		<br/>
+		<div id="rest"> <strong>For RI,RA Category - Enter the grade as 'U'<br/>
+		(The calculator doesn't include arrear subjects of previous semester)<br/>
+		<br/><br/><u>"Please enter the grades carefully"</u></strong></div><br/><br/>
+		<table>
+			
+			<tr>
+				<th>S.NO </th>
+				<th>COURSE CODE</th>
+				<th>COURSE</th>
+				<th>GRADE OBTAINED</th>
+			</tr>
+			<tr>
+				<td> 1 </td>
+				<td> CSB204</td>
+				<td> OPERATING SYSTEMS</td>
+				<td> 
+				<form>
+					<select name="grade1" onchange="calculate(value,name)">
+						<option value="100"> Select </option>
+						<option value="10">S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+					
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 2</td>
+				<td> CSB215</td>
+				<td> COMPUTER NETWORKS</td>
+				<td> 
+					<form>
+					<select name="grade2" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 3</td>
+				<td> CSB234</td>
+				<td> NETWORKING LAB</td>
+				<td> 
+					<form>
+					<select name="grade3" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 4</td>
+				<td> CSB235</td>
+				<td> OPERATING SYSTEM LAB</td>
+				<td>
+				<form>
+					<select name="grade4" onchange="calculate(value,name)">
+						<option value="100">Select </option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 5</td>
+				<td> CSB237 </td>
+				<td> DESIGN PROJECT - 1</td>
+				<td> 
+					<form>
+					<select name="grade5" onchange="calculate(value,name)">
+						<option value="100">Select </option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 6</td>
+				<td> ITB203</td>
+				<td> MICROPROCESSOR AND COMPUTER ARCHITECTURE </td>
+				<td> 
+					<form>
+					<select name="grade6" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 7</td>
+				<td> ITB233</td>
+				<td> MICROPROCESSOR LAB</td>
+				<td> 
+					<form>
+					<select name="grade7" onchange="calculate(value,name)">
+						<option value="100">Select </option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 8</td>
+				<td> MAA203</td>
+				<td> PROBABILITY AND STATISTICS </td>
+				<td> 
+					<form>
+					<select name="grade8" onchange="calculate(value,name)">
+						<option value="100">Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 9</td>
+				<td> SSA232</td>
+				<td> APTITUDE 2</td>
+				<td> 
+					<form>
+					<select name="grade9" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 10</td>
+				<td> EE </td>
+				<td> ENGINEERING ELECTIVE </td>
+				<td> 
+					<form>
+					<select name="grade10" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+			</tr>
+			<tr>
+				<td> 11</td>
+				<td> OE</td>
+				<td> OPEN ELECTIVE (FOR IBM STUDENTS - IBC401 )</td>
+				<td> 
+					<form>
+					<select name="grade11" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+				 
+				
+				
+			</tr>	
+			<tr>
+				<td> 12</td>
+				<td> IBC431</td>
+				<td> VIRTUALIZATION LAB (Non IBM students- Don't enter)</td>
+				<td> 
+					<form>
+					<select name="grade12" onchange="calculate(value,name)">
+						<option value="100"> Select</option>
+						<option value="10"> S </option>
+						<option value="9"> A </option>
+						<option value="8"> B </option>
+						<option value="7"> C </option>
+						<option value="6"> D </option>
+						<option value="5"> E </option>
+						<option value="0"> U </option>
+					</select>
+				</form>
+				</td>
+				
+			</tr>			
+			
+		</table>
+		<p id="ibm"> <strong>Are you from IBM? (Please Specify this) </strong></p><br/>
+		<form id="note2">
+		<input type="radio" name="yes" value="1" onclick="check_ibm(value);"/>Yes <br/>
+		<input type="radio" name="yes" value="2" onclick="check_ibm(value);"/>  No<br/>
+		</form>
+		<form id="note3"><br/>
+		<input type="button" value="Calculate" onclick="display();"/>
+		
+		</form><br/><br/>
+		 <div id="result">  </div>
+		<div id="creator"> <br/><br/>
+		&copy;<br/><a href="https://github.com/drstrange11"> dr_strange</a> & <a href="https://github.com/Pacasian"> pacasian </a><br/>	
+		</div>
+	</strong>
+</div></center>
+</body>
+</html>
